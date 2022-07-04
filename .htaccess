@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/\.]+)$ $1.php 
+
+
+RewriteRule ^tasks/([0-9]+)$ controllers/task.php?taskid=$1 [L] 
+RewriteRule ^tasks$ controllers/task.php [L] 
